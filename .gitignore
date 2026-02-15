@@ -208,3 +208,4 @@ __marimo__/
 /requirements.txt
 /tests/test_example.py
 /tests/test_example2.py
+/conftest_old.py
