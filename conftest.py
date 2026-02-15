@@ -34,7 +34,7 @@ def base_url(request):
 
 @pytest.fixture()
 def wait(browser):
-    return WebDriverWait(browser, 5, poll_frequency=1)
+    return WebDriverWait(browser, 2, poll_frequency=1)
 
 @pytest.fixture
 def admin_creds():
