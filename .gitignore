@@ -208,4 +208,6 @@ __marimo__/
 /requirements.txt
 /tests/test_example.py
 /tests/test_example2.py
-/conftest_old.py
+/Dockerfile_hw10
+/conftest_hw10.py
+/conftest_hw_selenium.py
