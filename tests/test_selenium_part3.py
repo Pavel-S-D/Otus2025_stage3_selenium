@@ -5,7 +5,7 @@ from selenium.webdriver.support import expected_conditions as EC
 
 
 def test_admin_login_logout(browser, base_url, wait, admin_creds):
-    browser.get(f"{base_url}administration/index.php?route=common/login")
+    browser.get(f"{base_url}/administration/index.php?route=common/login")
 
     #Вводим логин/пароль
     input_user = wait.until(EC.presence_of_element_located((By.ID, "input-username")))
@@ -26,9 +26,9 @@ def test_admin_login_logout(browser, base_url, wait, admin_creds):
 
 def test_add_product_in_card(browser, base_url, wait):
     browser.get(base_url)
-    browser.find_element(By.CSS_SELECTOR, "a[href='http://localhost:8080/en-gb/product/iphone']").click()
+    browser.find_element(By.CSS_SELECTOR, f"a[href='{base_url}/en-gb/product/iphone']").click()
     browser.find_element(By.XPATH, "//button[contains(text(),'Add to Cart')]").click()
-    browser.get(f"{base_url}en-gb?route=checkout/cart")
+    browser.get(f"{base_url}/en-gb?route=checkout/cart")
     wait.until(EC.presence_of_element_located((By.XPATH, "//a[contains(text(),'iPhone')]"))).is_displayed()
 
 
